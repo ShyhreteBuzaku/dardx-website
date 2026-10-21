@@ -72,7 +72,7 @@
   color: #fff;
   font-family: var(--font-display);
   font-size: 0.85rem;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   transition: background 0.2s ease, color 0.2s ease;
@@ -196,7 +196,7 @@
   padding: 0.65rem 1.15rem;
   font-family: var(--font-display);
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   border: 2px solid transparent;
@@ -252,7 +252,7 @@
   display: block;
   font-family: var(--font-display);
   font-size: clamp(1.8rem, 3vw, 2.4rem);
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1;
   margin-bottom: 0.4rem;
 }
@@ -280,7 +280,7 @@
   display: inline-block;
   font-family: var(--font-display);
   font-size: 0.78rem;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   background: var(--accent);
@@ -312,7 +312,7 @@
 .mission-quote {
   font-family: var(--font-display);
   font-size: clamp(1.6rem, 3.2vw, 2.5rem);
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.25;
   max-width: 48rem;
   text-transform: uppercase;
@@ -444,7 +444,7 @@
 .system-meta span {
   font-family: var(--font-display);
   font-size: 0.72rem;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   border: 1px solid var(--ink);
@@ -494,7 +494,7 @@
 
 .contact-details dd {
   margin: 0.2rem 0 0;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .contact-aside {

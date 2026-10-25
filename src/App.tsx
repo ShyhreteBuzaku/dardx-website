@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./App.css";
+import Product8Fpv from "./Product8Fpv";
+import Product10Fpv from "./Product10Fpv";
 
 const capabilities = [
   {
@@ -30,21 +32,31 @@ const capabilities = [
 
 const systems = [
   {
-    name: "Aether Scout",
+    name: "8'' FPV",
     description:
       "A long-endurance ISR quadcopter for day/night observation, target designation, and convoy overwatch. Modular payloads swap in minutes.",
     tags: ["ISR", "EO/IR", "Payload ready"],
-    image: "/images/drone-payload.jpg",
-    alt: "DARDX ISR quadcopter with underslung payload",
+    image: "/images/FPV.png",
+    alt: "DARDX 8 inch FPV drone schematic",
+    href: "/products/8-fpv",
   },
   {
-    name: "Vantage FPV",
+    name: "10'' FPV Frame",
     description:
-      "A high-speed FPV strike drone with hardened video link options and a compact airframe for urban and trench-line missions.",
-    tags: ["FPV", "Strike", "Low signature"],
-    image: "/images/drone-hand.jpg",
-    alt: "Operator holding a DARDX FPV quadcopter",
+      "An FPV drone built for long-distance operations, prioritizing range, performance, and payload capacity.",
+    tags: ["Long range", "EO/IR", "Heavy payload"],
+    image: "/images/FPV.png",
+    alt: "DARDX 10 inch FPV drone schematic",
+    href: "/products/10-fpv",
   },
+  // {
+  //   name: "Vantage FPV",
+  //   description:
+  //     "A high-speed FPV strike drone with hardened video link options and a compact airframe for urban and trench-line missions.",
+  //   tags: ["FPV", "Strike", "Low signature"],
+  //   image: "/images/drone-hand.jpg",
+  //   alt: "Operator holding a DARDX FPV quadcopter",
+  // },
   {
     name: "DroneConnect Ground",
     description:
@@ -54,16 +66,24 @@ const systems = [
     alt: "DARDX DroneConnect Ground mast and antenna kit",
   },
   {
-    name: "Field Kit",
+    name: "Drone Scanner",
     description:
-      "A hard-case deployable FPV package — airframe, battery, and foam cutouts ready for transport and immediate launch.",
-    tags: ["FPV", "Hard case", "Ready to fly"],
-    image: "/images/drone-case.jpg",
-    alt: "DARDX FPV drone packed in a tactical hard case",
+      "A compact RF and visual detection node that spots, classifies, and tracks hostile UAS for early warning and airspace security.",
+    tags: ["C-UAS", "RF detect", "Airspace"],
+    image: "/images/drone-scanner.webp",
+    alt: "DARDX Drone Scanner detection system",
   },
+  // {
+  //   name: "Field Kit",
+  //   description:
+  //     "A hard-case deployable FPV package — airframe, battery, and foam cutouts ready for transport and immediate launch.",
+  //   tags: ["FPV", "Hard case", "Ready to fly"],
+  //   image: "/images/drone-case.jpg",
+  //   alt: "DARDX FPV drone packed in a tactical hard case",
+  // },
 ];
 
-export default function App() {
+function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const closeMenu = () => setMenuOpen(false);
@@ -108,18 +128,11 @@ export default function App() {
       <main id="top">
         <section className="hero" aria-label="Introduction">
           <div className="hero-media" aria-hidden="true">
-            <img
-              src="/images/drone-hand-detail.jpg"
-              alt=""
-            />
+            <img src="/images/drone-hand-detail.jpg" alt="" />
             <div className="hero-veil" />
           </div>
           <div className="container hero-content">
-            <img
-              className="hero-brand"
-              src="/logo.png"
-              alt="DARDX Systems"
-            />
+            <img className="hero-brand" src="/logo.png" alt="DARDX Systems" />
             <h1>Defense systems that stay ahead of the fight</h1>
             <p className="hero-lead">
               We design and field UAVs, radars, and sensing platforms for units
@@ -137,10 +150,6 @@ export default function App() {
         </section>
 
         <section className="stats" aria-label="Company figures">
-          <div className="stat">
-            <strong>40+</strong>
-            <span>Fielded platforms</span>
-          </div>
           <div className="stat">
             <strong>12</strong>
             <span>Active programs</span>
@@ -213,6 +222,11 @@ export default function App() {
                         <span key={tag}>{tag}</span>
                       ))}
                     </div>
+                    {"href" in system && system.href ? (
+                      <a className="system-link" href={system.href}>
+                        View specs →
+                      </a>
+                    ) : null}
                   </div>
                 </article>
               ))}
@@ -234,7 +248,7 @@ export default function App() {
                 <dl className="contact-details">
                   <div>
                     <dt>Email</dt>
-                    <dd>bberisha@dardx.ai</dd>
+                    <dd>contact@dardxsystems.com</dd>
                   </div>
                   <div>
                     <dt>Programs</dt>
@@ -286,4 +300,18 @@ export default function App() {
       </footer>
     </>
   );
+}
+
+export default function App() {
+  const path = window.location.pathname.replace(/\/$/, "") || "/";
+
+  if (path === "/products/8-fpv") {
+    return <Product8Fpv />;
+  }
+
+  if (path === "/products/10-fpv") {
+    return <Product10Fpv />;
+  }
+
+  return <Home />;
 }

@@ -5,82 +5,54 @@ import Product10Fpv from "./Product10Fpv";
 
 const capabilities = [
   {
-    title: "UAVs",
-    text: "Reconnaissance, strike, and logistics platforms engineered for contested environments.",
+    title: "UAV's",
+    text: "Reconnaissance & strike platforms engineered for contested environments.",
   },
   {
-    title: "Radar",
-    text: "Compact surveillance and tracking radars for airspace awareness and force protection.",
-  },
-  {
-    title: "Sensors",
-    text: "Electro-optical payloads and mission computers that turn flight time into intelligence.",
-  },
-  {
-    title: "EW / SIGINT",
-    text: "Electronic warfare modules that detect, disrupt, and protect against hostile links.",
-  },
-  {
-    title: "Ground control",
-    text: "Operator interfaces and datalinks built for rapid deployment and crew training.",
+    title: "Detectors",
+    text: "Compact surveillance and tracking radars for airspace awareness.",
   },
   {
     title: "Integration",
-    text: "Open interfaces so DARDX systems plug into existing C2 and NATO-aligned stacks.",
+    text: "Open interfaces so DARDX systems plug into your platforms.",
   },
 ];
 
 const systems = [
   {
-    name: "8'' FPV",
+    name: "8inch Frame",
     description:
-      "A long-endurance ISR quadcopter for day/night observation, target designation, and convoy overwatch. Modular payloads swap in minutes.",
-    tags: ["ISR", "EO/IR", "Payload ready"],
+      "A long-endurance strike fpv for day/night, Modular payloads swap in minutes.",
+    tags: ["RF", "Fiber Optic", "Payload ready"],
     image: "/images/FPV.png",
     alt: "DARDX 8 inch FPV drone schematic",
     href: "/products/8-fpv",
   },
   {
-    name: "10'' FPV Frame",
+    name: "10inch Frame",
     description:
       "An FPV drone built for long-distance operations, prioritizing range, performance, and payload capacity.",
-    tags: ["Long range", "EO/IR", "Heavy payload"],
+    tags: ["RF", "Fiber Optic", "Payload ready"],
     image: "/images/FPV.png",
     alt: "DARDX 10 inch FPV drone schematic",
     href: "/products/10-fpv",
   },
-  // {
-  //   name: "Vantage FPV",
-  //   description:
-  //     "A high-speed FPV strike drone with hardened video link options and a compact airframe for urban and trench-line missions.",
-  //   tags: ["FPV", "Strike", "Low signature"],
-  //   image: "/images/drone-hand.jpg",
-  //   alt: "Operator holding a DARDX FPV quadcopter",
-  // },
   {
-    name: "DroneConnect Ground",
+    name: "GCS",
     description:
       "A rapid-deploy mast and antenna node that extends command links, video, and mesh connectivity from the field edge.",
-    tags: ["Comms", "Mast", "Field deploy"],
-    image: "/images/ground-station.png",
-    alt: "DARDX DroneConnect Ground mast and antenna kit",
+    tags: ["RF", "Fiber Optic"],
+    image: "/images/GCS.png",
+    alt: "DARDX GCS Ground mast and antenna kit",
   },
   {
-    name: "Drone Scanner",
+    name: "Drone Detector",
     description:
       "A compact RF and visual detection node that spots, classifies, and tracks hostile UAS for early warning and airspace security.",
-    tags: ["C-UAS", "RF detect", "Airspace"],
-    image: "/images/drone-scanner.webp",
+    tags: ["UWB", "Portable", "AOA", "FEED VIEW"],
+    image: "/images/SCAN.png",
     alt: "DARDX Drone Scanner detection system",
   },
-  // {
-  //   name: "Field Kit",
-  //   description:
-  //     "A hard-case deployable FPV package — airframe, battery, and foam cutouts ready for transport and immediate launch.",
-  //   tags: ["FPV", "Hard case", "Ready to fly"],
-  //   image: "/images/drone-case.jpg",
-  //   alt: "DARDX FPV drone packed in a tactical hard case",
-  // },
 ];
 
 function Home() {
@@ -149,20 +121,12 @@ function Home() {
           </div>
         </section>
 
-        <section className="stats" aria-label="Company figures">
+        {/* <section className="stats" aria-label="Company figures">
           <div className="stat">
-            <strong>12</strong>
-            <span>Active programs</span>
-          </div>
-          <div className="stat">
-            <strong>24/7</strong>
-            <span>Mission support</span>
-          </div>
-          <div className="stat">
-            <strong>UAV · RADAR</strong>
+            <strong>FPV's · DETECTORS</strong>
             <span>Core product lines</span>
           </div>
-        </section>
+        </section> */}
 
         <section className="section mission" id="mission">
           <div className="container">
@@ -181,7 +145,7 @@ function Home() {
               <h2>What we build</h2>
               <p>
                 A focused portfolio for air reconnaissance, strike support, and
-                electromagnetic awareness — designed for operators, not demos.
+                electromagnetic awareness — designed for operators.
               </p>
             </div>
             <div className="cap-grid">
@@ -260,7 +224,7 @@ function Home() {
                 <p>
                   Ready to evaluate a platform or request a capability brief?
                 </p>
-                <a className="btn btn-primary" href="mailto:bberisha@dardx.ai">
+                <a className="btn btn-primary" href="mailto:contact@dardxsystems.com">
                   Email DARDX
                 </a>
               </aside>
@@ -289,7 +253,7 @@ function Home() {
               <div>
                 <h3>Company</h3>
                 <a href="#contact">Contact</a>
-                <a href="mailto:bberisha@dardx.ai">Email</a>
+                <a href="mailto:contact@dardxsystems.com">Email</a>
               </div>
             </div>
           </div>

@@ -38,7 +38,7 @@ export type ProductData = {
   variants: VariantCard[];
   airframe: SpecItem[];
   dataLink: SpecItem[];
-  sensors: SensorItem[];
+  sensors: SpecItem[];
   metrics: MetricItem[];
   metricsImage?: string;
   related: RelatedProduct[];
@@ -182,58 +182,13 @@ export default function ProductPage({ product }: { product: ProductData }) {
 
         <section className="product-specs_wrap" aria-label="Specifications">
           <div className="container product-specs_layout">
-            <div className="product-specs_gallery">
-              <div className="product-specs_image">
-                <img
-                  src={schemaPrimary}
-                  alt={`${product.name} isometric schema`}
-                />
-              </div>
-              <div className="product-specs_image">
-                <img
-                  src={schemaSecondary}
-                  alt={`${product.name} top schema`}
-                />
-              </div>
-            </div>
-
             <div className="product-specs_blocks">
               <SpecBlock number="01" title="Airframe" items={product.airframe} />
               <SpecBlock number="02" title="Data link" items={product.dataLink} />
-
-              <div className="product-specs_block">
-                <header className="product-specs_block_title">
-                  <span className="product-specs_block_square" aria-hidden="true" />
-                  <span className="product-specs_block_num">03</span>
-                  <h2>Sensors</h2>
-                </header>
-
-                <div className="product-specs_block_list">
-                  {product.sensors.map((sensor) => (
-                    <article
-                      className="product-specs_block_item product-specs_block_item--sensor"
-                      key={sensor.name}
-                    >
-                      <div className="product-specs_block_type">
-                        <span className="product-specs_label">{sensor.name}</span>
-                      </div>
-                      <div className="product-specs_block_prop">
-                        {sensor.lines.map((line) => (
-                          <strong key={line}>{line}</strong>
-                        ))}
-                      </div>
-                      <div
-                        className={`product-specs_block_image${sensor.image ? "" : " is-empty"}`}
-                      >
-                        {sensor.image ? (
-                          <img src={sensor.image} alt="" />
-                        ) : null}
-                      </div>
-                    </article>
-                  ))}
-                </div>
-              </div>
+              <SpecBlock number="02" title="Sensors" items={product.sensors} />
             </div>
+
+
           </div>
         </section>
 

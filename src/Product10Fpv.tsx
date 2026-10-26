@@ -1,70 +1,69 @@
 import ProductPage, { type ProductData } from "./ProductPage";
 
 const product: ProductData = {
-  name: "10'' FPV",
-  tagline: "One platform. Two missions.",
-  lead: "An FPV drone built for long-distance operations, prioritizing range, performance, and payload capacity.",
+  name: "8 INCH FPV",
   features: [
     "Swappable front sensors",
     "Integrated landing leg mounts",
     "Ruggedized camera mount",
-    "Frequency tuned, user swappable antennas",
+    "Multiband comms",
+    "FiberLink HD",
   ],
   heroImage: "/images/FPV.png",
   schemaImages: ["/images/FPV.png"],
   variants: [
     {
       number: "01",
-      name: "10'' FPV",
-      image: "/images/FPV.png",
-      active: true,
-    },
-    {
-      number: "02",
-      name: "8'' FPV",
+      name: "8 INCH FPV",
       image: "/images/FPV.png",
       href: "/products/8-fpv",
     },
+    {
+      number: "02",
+      name: "10 INCH FPV",
+      image: "/images/FPV.png",
+      active: true,
+    },
   ],
   airframe: [
-    { name: "Length", value: "20.5 IN" },
-    { name: "Width", value: "23.2 IN" },
-    { name: "Weight (airframe)", value: "7.72 LB (3,500 G)" },
+    { name: "Frame", value: "10 INCH" },
+    { name: "Weight (w/ Battery)", value: "2.5 Kg" },
   ],
   dataLink: [
-    { name: "Video", value: "High power adjustable analog link" },
-    { name: "Control", value: "Dual band, EW hardened" },
-    { name: "Antennas", value: "Frequency tuned · User swappable" },
+    { name: "Video", value: "High power multiband link" },
+    { name: "Control", value: "Triple band, EW hardened" },
+    { name: "Antennas", value: "User swappable" },
+    { name: "Fiber Optic", value: "HD video link" },
   ],
   sensors: [
-    { name: "FPV camera", lines: ["1200 TVL", "150° FOV"] },
-    { name: "Thermal camera", lines: ["640 × 480", "78° FOV"] },
-    { name: "EO/IR illuminator", lines: ["1,000 lumens", "1,000 mW/sr"] },
-    { name: "Down camera", lines: ["1200 TVL", "150° FOV"] },
+    { name: "FPV camera", value: "1200 TVL - 150° FOV" },
+    { name: "Thermal camera", value: "640 × 480 - 62° FOV" },
+    { name: "EO/IR illuminator", value: "1,000 lumens" },
+    // { name: "Down camera", value: ["1200 TVL", "150° FOV"] },
   ],
   metricsImage: "/images/drone-hand-detail.jpg",
   metrics: [
-    { name: "Top speed", value: "80 mph / 129 kph" },
-    { name: "Flight range", value: "36 km" },
-    { name: "Flight time", value: "48 min" },
-    { name: "Launch time", value: "<3 min" },
+    { name: "Top speed", value: "150 km/h" },
+    { name: "Flight range", value: "25 km" },
+    { name: "Max flight time", value: "35 min" },
+    { name: "Max payload", value: "3 kg" },
   ],
   related: [
     {
-      name: "8'' FPV",
+      name: "8 INCH FPV",
       href: "/products/8-fpv",
       image: "/images/FPV.png",
       category: "Long range",
     },
     {
-      name: "DroneConnect Ground",
+      name: "GCS",
       href: "/#systems",
-      image: "/images/ground-station.png",
+      image: "/images/GCS.png",
       category: "Ground control",
     },
   ],
 };
 
-export default function Product10Fpv() {
+export default function Product8Fpv() {
   return <ProductPage product={product} />;
 }

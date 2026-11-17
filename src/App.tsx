@@ -2,6 +2,8 @@ import { useState } from "react";
 import "./App.css";
 import Product8Fpv from "./Product8Fpv";
 import Product10Fpv from "./Product10Fpv";
+import ComponentPage from "./ComponentPage";
+import { componentHref, components } from "./componentsData";
 
 const capabilities = [
   {
@@ -52,52 +54,6 @@ const systems = [
     tags: ["UWB", "Portable", "AOA", "FEED VIEW"],
     image: "/images/SCAN.png",
     alt: "DARDX Drone Scanner detection system",
-  },
-];
-
-type Component = {
-  name: string;
-  image: string; // under public/; placeholder shows until the file exists
-  alt: string;
-  href: string; // details page
-};
-
-const components: Component[] = [
-  {
-    name: "Flight Controller",
-    image: "/images/fc0.png",
-    alt: "DARDX flight controller board",
-    href: "/components/flight-controller",
-  },
-  {
-    name: "Radio Link / VTX + RC",
-    image: "/images/radio.png",
-    alt: "DARDX radio link with video transmitter and RC receiver",
-    href: "/components/radio-link",
-  },
-  {
-    name: "Fiber Link / VTX + RC",
-    image: "/images/fiber.png",
-    alt: "DARDX fiber optic link with video and RC control",
-    href: "/components/fiber-link",
-  },
-  {
-    name: "AI Camera",
-    image: "/images/aicam.png",
-    alt: "DARDX AI camera module",
-    href: "/components/ai-camera",
-  },
-  {
-    name: "ESC",
-    image: "/images/esc.png",
-    alt: "DARDX electronic speed controller",
-    href: "/components/esc",
-  },
-  {
-    name: "Scrambler",
-    image: "/images/scram.png",
-    alt: "DARDX scrambler module",
-    href: "/components/scrambler",
   },
 ];
 
@@ -275,7 +231,7 @@ function Home() {
             </div>
             <div className="comp-grid">
               {components.map((item, i) => (
-                <a className="comp-item" key={item.name} href={item.href}>
+                <a className="comp-item" key={item.slug} href={componentHref(item)}>
                   <div className="comp-media">
                     <ComponentImage src={item.image} alt={item.alt} />
                   </div>
@@ -370,6 +326,11 @@ export default function App() {
 
   if (path === "/products/10-fpv") {
     return <Product10Fpv />;
+  }
+
+  const component = components.find((c) => componentHref(c) === path);
+  if (component) {
+    return <ComponentPage component={component} />;
   }
 
   return <Home />;

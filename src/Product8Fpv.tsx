@@ -18,12 +18,13 @@ const product: ProductData = {
       image: "/images/FPV.png",
       active: true,
     },
-    {
-      number: "02",
-      name: "10 INCH FPV",
-      image: "/images/FPV.png",
-      href: "/products/10-fpv",
-    },
+    // 10" page still exists at /products/10-fpv, just not linked
+    // {
+    //   number: "02",
+    //   name: "10 INCH FPV",
+    //   image: "/images/FPV.png",
+    //   href: "/products/10-fpv",
+    // },
   ],
   airframe: [
     { name: "Frame", value: "8 INCH" },
@@ -49,12 +50,12 @@ const product: ProductData = {
     { name: "Max payload", value: "2 kg" },
   ],
   related: [
-    {
-      name: "10 INCH FPV",
-      href: "/products/10-fpv",
-      image: "/images/FPV.png",
-      category: "Long range",
-    },
+    // {
+    //   name: "10 INCH FPV",
+    //   href: "/products/10-fpv",
+    //   image: "/images/FPV.png",
+    //   category: "Long range",
+    // },
     {
       name: "GCS",
       href: "/#systems",

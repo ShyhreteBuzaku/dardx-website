@@ -20,7 +20,7 @@ const capabilities = [
 
 const systems = [
   {
-    name: "8inch Frame",
+    name: "8inch FPV",
     description:
       "A long-endurance strike fpv for day/night, Modular payloads swap in minutes.",
     tags: ["RF", "Fiber Optic", "Payload ready"],
@@ -28,15 +28,15 @@ const systems = [
     alt: "DARDX 8 inch FPV drone schematic",
     href: "/products/8-fpv",
   },
-  {
-    name: "10inch Frame",
-    description:
-      "An FPV drone built for long-distance operations, prioritizing range, performance, and payload capacity.",
-    tags: ["RF", "Fiber Optic", "Payload ready"],
-    image: "/images/FPV.png",
-    alt: "DARDX 10 inch FPV drone schematic",
-    href: "/products/10-fpv",
-  },
+  // {
+  //   name: "10inch Frame",
+  //   description:
+  //     "An FPV drone built for long-distance operations, prioritizing range, performance, and payload capacity.",
+  //   tags: ["RF", "Fiber Optic", "Payload ready"],
+  //   image: "/images/FPV.png",
+  //   alt: "DARDX 10 inch FPV drone schematic",
+  //   href: "/products/10-fpv",
+  // },
   {
     name: "GCS",
     description:
@@ -54,6 +54,68 @@ const systems = [
     alt: "DARDX Drone Scanner detection system",
   },
 ];
+
+type Component = {
+  name: string;
+  image: string; // under public/; placeholder shows until the file exists
+  alt: string;
+  href: string; // details page
+};
+
+const components: Component[] = [
+  {
+    name: "Flight Controller",
+    image: "/images/fc0.png",
+    alt: "DARDX flight controller board",
+    href: "/components/flight-controller",
+  },
+  {
+    name: "Radio Link / VTX + RC",
+    image: "/images/radio.png",
+    alt: "DARDX radio link with video transmitter and RC receiver",
+    href: "/components/radio-link",
+  },
+  {
+    name: "Fiber Link / VTX + RC",
+    image: "/images/fiber.png",
+    alt: "DARDX fiber optic link with video and RC control",
+    href: "/components/fiber-link",
+  },
+  {
+    name: "AI Camera",
+    image: "/images/aicam.png",
+    alt: "DARDX AI camera module",
+    href: "/components/ai-camera",
+  },
+  {
+    name: "ESC",
+    image: "/images/esc.png",
+    alt: "DARDX electronic speed controller",
+    href: "/components/esc",
+  },
+  {
+    name: "Scrambler",
+    image: "/images/scram.png",
+    alt: "DARDX scrambler module",
+    href: "/components/scrambler",
+  },
+];
+
+function ComponentImage({ src, alt }: { src: string; alt: string }) {
+  const [failed, setFailed] = useState(false);
+
+  if (failed) {
+    return (
+      <span className="comp-placeholder" aria-hidden="true">
+        Image
+      </span>
+    );
+  }
+
+  return (
+    <img src={src} alt={alt} loading="lazy" onError={() => setFailed(true)} />
+  );
+}
 
 function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -86,6 +148,9 @@ function Home() {
             </a>
             <a href="#systems" onClick={closeMenu}>
               Systems
+            </a>
+            <a href="#components" onClick={closeMenu}>
+              Components
             </a>
             <a href="#mission" onClick={closeMenu}>
               Mission
@@ -198,6 +263,35 @@ function Home() {
           </div>
         </section>
 
+        <section className="section" id="components">
+          <div className="container">
+            <div className="section-head">
+              <span className="section-label">Components</span>
+              <h2>Building blocks</h2>
+              <p>
+                The in-house subsystems that power DARDX platforms, available
+                for integration into your own builds. <b>(All components are NDAA compliant)</b>
+              </p>
+            </div>
+            <div className="comp-grid">
+              {components.map((item, i) => (
+                <a className="comp-item" key={item.name} href={item.href}>
+                  <div className="comp-media">
+                    <ComponentImage src={item.image} alt={item.alt} />
+                  </div>
+                  <div className="comp-copy">
+                    <span className="comp-index">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <h3>{item.name}</h3>
+                  </div>
+                  <span className="comp-link">View details →</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="section contact" id="contact">
           <div className="container">
             <div className="contact-panel">
@@ -248,6 +342,7 @@ function Home() {
                 <h3>Explore</h3>
                 <a href="#capabilities">Capabilities</a>
                 <a href="#systems">Systems</a>
+                <a href="#components">Components</a>
                 <a href="#mission">Mission</a>
               </div>
               <div>
@@ -258,7 +353,7 @@ function Home() {
             </div>
           </div>
           <div className="footer-bottom">
-            © {new Date().getFullYear()} DARDX Systems. All rights reserved.
+            © {new Date().getFullYear()} DARDX SYSTEMS. All rights reserved.
           </div>
         </div>
       </footer>

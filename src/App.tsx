@@ -121,7 +121,24 @@ function Home() {
       <main id="top">
         <section className="hero" aria-label="Introduction">
           <div className="hero-media" aria-hidden="true">
-            <img src="/images/drone-hand-detail.jpg" alt="" />
+            {/* <img src="/images/drone-hand-detail.jpg" alt="" /> */}
+            {/* background_loop.mp4 is background_video.mp4 re-encoded with the
+                end crossfaded into the start (see README) so the loop is seamless */}
+            <video
+              src="/videos/background_loop.mp4"
+              poster="/images/drone-hand-detail.jpg"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              ref={(video) => {
+                if (!video) return;
+                // default* survives reloads; playbackRate applies now
+                video.defaultPlaybackRate = 0.8;
+                video.playbackRate = 0.8;
+              }}
+            />
             <div className="hero-veil" />
           </div>
           <div className="container hero-content">

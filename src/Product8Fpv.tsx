@@ -9,13 +9,13 @@ const product: ProductData = {
     "Multiband comms",
     "FiberLink HD",
   ],
-  heroImage: "/images/FPV.png",
-  schemaImages: ["/images/FPV.png"],
+  heroImage: "/images/8-fpv.png",
+  schemaImages: ["/images/8-fpv.png"],
   variants: [
     {
       number: "01",
       name: "8 INCH FPV",
-      image: "/images/FPV.png",
+      image: "/images/8-fpv.png",
       active: true,
     },
     // 10" page still exists at /products/10-fpv, just not linked
@@ -34,12 +34,12 @@ const product: ProductData = {
     { name: "Video", value: "High power multiband link" },
     { name: "Control", value: "Triple band, EW hardened" },
     { name: "Antennas", value: "User swappable" },
-    { name: "Fiber Optic", value: "HD video link" },
+    { name: "Fiber Optic", value: "Analog or HD video link" },
   ],
   sensors: [
-    { name: "FPV camera", value: "1200 TVL - 150° FOV" },
+    { name: "FPV camera", value: "180° FOV" },
     { name: "Thermal camera", value: "640 × 480 - 62° FOV" },
-    { name: "EO/IR illuminator", value: "1,000 lumens" },
+    { name: "AI Camera", value: "FHD with CVBS output" },
     // { name: "Down camera", value: ["1200 TVL", "150° FOV"] },
   ],
   metricsImage: "/images/drone-hand-detail.jpg",
@@ -56,12 +56,12 @@ const product: ProductData = {
     //   image: "/images/FPV.png",
     //   category: "Long range",
     // },
-    {
-      name: "GCS",
-      href: "/#systems",
-      image: "/images/GCS.png",
-      category: "Ground control",
-    },
+    // {
+    //   name: "GCS",
+    //   href: "/#systems",
+    //   image: "/images/GCS.png",
+    //   category: "Ground control",
+    // },
   ],
 };
 

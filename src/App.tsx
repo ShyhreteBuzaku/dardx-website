@@ -26,7 +26,7 @@ const systems = [
     description:
       "A long-endurance strike fpv for day/night, Modular payloads swap in minutes.",
     tags: ["RF", "Fiber Optic", "Payload ready"],
-    image: "/images/FPV.png",
+    image: "/images/8-fpv.png",
     alt: "DARDX 8 inch FPV drone schematic",
     href: "/products/8-fpv",
   },
@@ -39,20 +39,20 @@ const systems = [
   //   alt: "DARDX 10 inch FPV drone schematic",
   //   href: "/products/10-fpv",
   // },
-  {
-    name: "GCS",
-    description:
-      "A rapid-deploy mast and antenna node that extends command links, video, and mesh connectivity from the field edge.",
-    tags: ["RF", "Fiber Optic"],
-    image: "/images/GCS.png",
-    alt: "DARDX GCS Ground mast and antenna kit",
-  },
+  // {
+  //   name: "GCS",
+  //   description:
+  //     "A rapid-deploy mast and antenna node that extends command links, video, and mesh connectivity from the field edge.",
+  //   tags: ["RF", "Fiber Optic"],
+  //   image: "/images/GCS.png",
+  //   alt: "DARDX GCS Ground mast and antenna kit",
+  // },
   {
     name: "Drone Detector",
     description:
       "A compact RF and visual detection node that spots, classifies, and tracks hostile UAS for early warning and airspace security.",
     tags: ["UWB", "Portable", "AOA", "FEED VIEW"],
-    image: "/images/SCAN.png",
+    image: "/images/scanner.png",
     alt: "DARDX Drone Scanner detection system",
   },
 ];
